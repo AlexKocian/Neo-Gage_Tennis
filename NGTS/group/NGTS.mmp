@@ -1,0 +1,59 @@
+// .mmp file for Game application
+
+TARGET NGTS.app
+TARGETTYPE app
+UID 0x100039CE 0x68C7C3B9 // Experimental UID3
+TARGETPATH \system\apps\NGTS
+
+LANG 01 // English
+
+SOURCEPATH ..\src
+SOURCE GameApplication.cpp
+SOURCE GameAppUi.cpp
+SOURCE GameDocument.cpp
+SOURCE GameContainer.cpp
+SOURCE Game.cpp
+SOURCE KeyHandler.cpp
+SOURCE ScoreManager.cpp
+SOURCE SettingsManager.cpp
+SOURCE BitmapManager.cpp
+SOURCE SoundManager.cpp
+
+RESOURCE ..\data\NGTS.rss
+RESOURCE ..\data\NGTS_caption.rss
+
+START BITMAP NGTS.mbm
+
+HEADER
+TARGETPATH \system\apps\NGTS
+SOURCEPATH ..\bitmaps
+
+SOURCE c12 Paddle.bmp
+SOURCE 2 PaddleMask.bmp
+
+SOURCE c12 Ball.bmp
+SOURCE 2 BallMask.bmp
+
+SOURCE c12 LeftArrow.bmp
+SOURCE 2 LeftArrowMask.bmp
+
+SOURCE c12 RightArrow.bmp
+SOURCE 2 RightArrowMask.bmp
+
+SOURCE c12 MainMenuLogo.bmp
+
+END
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE \epoc32\include
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib
+LIBRARY avkon.lib
+LIBRARY fbscli.lib bitgdi.lib ws32.lib
+LIBRARY estor.lib efsrv.lib
+LIBRARY	MediaClientAudioStream.lib
+
+AIF NGTS.aif ..\aif NGTSAif.rss c12 TennisLargeIcon.bmp TennisLargeMask.bmp TennisSmallIcon.bmp TennisSmallMask.bmp
+
+// End of File

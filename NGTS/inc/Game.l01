@@ -1,0 +1,10 @@
+// APPLICATION INFORMATION
+#define ELanguage ELangEnglish	// Caption language
+
+// LOCALISATION STRINGS
+
+// Caption strings for application
+#define qtn_app_caption_string "Neo-Gage Tennis"
+#define qtn_app_short_caption_string "NGTennis"
+
+// End of File

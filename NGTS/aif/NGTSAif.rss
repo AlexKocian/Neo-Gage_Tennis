@@ -1,0 +1,11 @@
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+{
+	app_uid=0x68C7C3B9;
+	num_icons=2;
+	embeddability=KAppNotEmbeddable;
+	newfile=KAppSupportsNewFile;
+}
+
+// End of File

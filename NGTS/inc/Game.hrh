@@ -1,0 +1,10 @@
+#ifndef GAME_HRH
+#define GAME_HRH
+
+enum TGameIds
+{
+	EGameStart = 1,
+	EGamePause
+};
+
+#endif

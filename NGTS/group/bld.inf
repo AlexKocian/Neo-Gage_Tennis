@@ -1,0 +1,27 @@
+// Build information file for application
+
+// Export sound files for all IDEs.
+// Note that this will create wins, winsb and winscw directories
+// in the epoc32 directory if they do not already exist.
+
+PRJ_EXPORTS
+..\sounds\BallBeep1.wav ..\release\wins\udeb\z\system\apps\NGTS\BallBeep1.wav
+..\sounds\BallBeep1.wav ..\release\winsb\udeb\z\system\apps\NGTS\BallBeep1.wav
+..\sounds\BallBeep1.wav ..\release\winscw\udeb\z\system\apps\NGTS\BallBeep1.wav
+
+..\sounds\BallBeep2.wav ..\release\wins\udeb\z\system\apps\NGTS\BallBeep2.wav
+..\sounds\BallBeep2.wav ..\release\winsb\udeb\z\system\apps\NGTS\BallBeep2.wav
+..\sounds\BallBeep2.wav ..\release\winscw\udeb\z\system\apps\NGTS\BallBeep2.wav
+
+..\sounds\MenuBeepAccept.wav ..\release\wins\udeb\z\system\apps\NGTS\MenuBeepAccept.wav
+..\sounds\MenuBeepAccept.wav ..\release\winsb\udeb\z\system\apps\NGTS\MenuBeepAccept.wav
+..\sounds\MenuBeepAccept.wav ..\release\winscw\udeb\z\system\apps\NGTS\MenuBeepAccept.wav
+
+..\sounds\MenuBeepMove.wav ..\release\wins\udeb\z\system\apps\NGTS\MenuBeepMove.wav
+..\sounds\MenuBeepMove.wav ..\release\winsb\udeb\z\system\apps\NGTS\MenuBeepMove.wav
+..\sounds\MenuBeepMove.wav ..\release\winscw\udeb\z\system\apps\NGTS\MenuBeepMove.wav
+
+PRJ_MMPFILES
+NGTS.mmp
+
+// End of File

@@ -1,0 +1,10 @@
+#include "Game.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+{
+	caption=qtn_app_caption_string;
+	shortcaption=qtn_app_short_caption_string;
+}
+
+// End of File

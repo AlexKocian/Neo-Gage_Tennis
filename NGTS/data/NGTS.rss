@@ -1,0 +1,90 @@
+// RESOURCE IDENTIFIER
+NAME NGTS // 4 letter ID
+
+// INCLUDES
+
+#include <avkon.loc> // Currently unused
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <eikon.rh>
+
+#include "Game.hrh"
+#include "Game.loc"
+
+// RESOURCE DEFINITIONS
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf="NGTS"; }
+
+///////////////////
+// Application menu
+///////////////////
+
+RESOURCE EIK_APP_INFO
+{
+	menubar = r_game_menubar;
+	cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+}
+
+RESOURCE MENU_BAR r_game_menubar
+{
+	titles =
+	{
+		MENU_TITLE
+		{
+			menu_pane = r_game_menu;
+		}
+	};
+}
+
+//	r_game_menu
+//	Menu for "Options"
+RESOURCE MENU_PANE r_game_menu
+{
+	items =
+	{
+		MENU_ITEM
+		{
+			command = EGameStart;
+			txt = START_GAME;
+		},
+
+		MENU_ITEM
+		{
+			command = EGamePause;
+			txt = PAUSE_GAME;
+		},
+
+		MENU_ITEM
+		{
+			command = EAknSoftkeyExit;
+			txt = text_softkey_exit;
+		}
+	};
+}
+
+
+// Strings used by the application
+
+RESOURCE DIALOG r_aknexquery_confirmation_query
+{
+	flags = EGeneralQueryFlags;
+	buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+	items =
+	{
+		DLG_LINE
+		{
+			type = EAknCtQuery;
+			id = EGeneralQuery;
+			control = AVKON_CONFIRMATION_QUERY
+			{
+				layout = EConfirmationQueryLayout;
+				label = CONTINUE_GAME;
+			};
+		}
+	};
+}
+
+// End of File

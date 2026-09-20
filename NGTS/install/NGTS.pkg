@@ -1,0 +1,21 @@
+#{"NGTS"}, (0x68C7C3B9), 1, 0, 0, TYPE=SISAPP
+
+; Platform definitions
+; (0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+; (0x101F795F), 0, 0, 0, {"Series60ProductID"}
+(0x101F8202), 0, 0, 0, {"Series60ProductID"}
+; (0x101F8A64), 0, 0, 0, {"Series60ProductID"}
+
+; Files to install:
+"..\..\..\Epoc32\release\armi\urel\NGTS.aif"         -"!:\system\apps\NGTS\NGTS.aif"
+"..\..\..\Epoc32\release\armi\urel\NGTS.r01"         -"!:\system\apps\NGTS\NGTS.rsc"
+"..\..\..\Epoc32\release\armi\urel\NGTS_caption.r01" -"!:\system\apps\NGTS\NGTS_caption.rsc"
+"..\..\..\Epoc32\release\armi\urel\NGTS.app"         -"!:\system\apps\NGTS\NGTS.app"
+"..\..\..\Epoc32\release\armi\urel\NGTS.mbm"		 -"!:\system\apps\NGTS\NGTS.mbm"
+
+"..\sounds\BallBeep1.wav"							 -"!:\system\apps\NGTS\BallBeep1.wav"
+"..\sounds\BallBeep2.wav"							 -"!:\system\apps\NGTS\BallBeep2.wav"
+"..\sounds\MenuBeepAccept.wav"						 -"!:\system\apps\NGTS\MenuBeepAccept.wav"
+"..\sounds\MenuBeepMove.wav"						 -"!:\system\apps\NGTS\MenuBeepMove.wav"
+
+; EOF
