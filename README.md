@@ -17,10 +17,13 @@ IMPORTANT: make sure you have enough free space on your device! At least a few h
 TBA. I'm too tired right now and I feel like this will need an entire instructional video.
 The short version is this: WinXP or older (32 bit), Symbian S60v1.2 SDK (or older, but why?), ActivePerl 5.6, Microsoft Visual C++ 6.0 and JRE 2.
 
+# Saving
+Saving options is done automatically when leaving the Options screen, high scores are saved when leaving the game to go back to the main menu (recorded as "USR" on the scoreboard).
+
 # Controls
-Command button area (stuff like Options, Exit and Back) - left/right softkey
-Accept - center of D-Pad/'Tick' button on QD/'5'
-Menu control - D-Pad
+Command button area (stuff like Options, Exit and Back) - left/right softkey<br>
+Accept - center of D-Pad/'Tick' button on QD/'5'<br>
+Menu control - D-Pad<br>
 Game controls - left on the D-Pad/'4' to move left, right on the D-Pad/'6' to move right, right softkey pauses
 
 # Screens
