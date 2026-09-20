@@ -1,5 +1,5 @@
 # Neo-Gage_Tennis
-A Symbian S60v1 'Pong' clone
+A Symbian S60v1 'Pong' clone. This project is not affiliated with Nokia or Atari :)
 
 # Supported devices
 This game should work on all Symbian Series 60 v1.x and 2.x devices, although I've only tested on Nokia N-Gage (NEM-4). If you have other devices, please let me know whether everything functions normally.
