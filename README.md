@@ -1,4 +1,4 @@
-# Neo-Gage_Tennis
+# Neo-Gage Tennis
 A Symbian S60v1 'Pong' clone. This project is not affiliated with Nokia or Atari :)
 
 # Supported devices
