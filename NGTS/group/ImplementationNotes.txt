@@ -1,0 +1,4 @@
+1. Game resume audio skip:
+If de-emphasizing or suspending the game and then resuming it causes the audio to skip,
+it may be that the missing chunks of sound data were flushed from the client-side stack when suspending or de-emphasizing the game.
+It may be possible to implement a logging system to rewrite the unplayed chunks flushed from memory upon resuming the game.

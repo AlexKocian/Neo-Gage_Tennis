@@ -1,10 +1,24 @@
-#{"NGTS"}, (0x68C7C3B9), 1, 0, 0, TYPE=SISAPP
+#{"NGTS"}, (0x68C7C3B9), 1, 1, 0, TYPE=SISAPP
 
-; Platform definitions
-; (0x101F6F88), 0, 0, 0, {"Series60ProductID"}
-; (0x101F795F), 0, 0, 0, {"Series60ProductID"}
+; PLATFORM DEFINITIONS
+
+; Series 60 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Series 60 1.0
+(0x101F795F), 0, 0, 0, {"Series60ProductID"}
+
+; Series 60 1.2
 (0x101F8202), 0, 0, 0, {"Series60ProductID"}
+
+; Nokia N-Gage
 ; (0x101F8A64), 0, 0, 0, {"Series60ProductID"}
+
+; Series 60 2.0
+; (0x101F7960), 0, 0, 0, {"Series60ProductID"}
+
+; Text to display during install. Prompts the user for a yes/no answer
+"InstallText.txt"-"",FT,TA
 
 ; Files to install:
 "..\..\..\Epoc32\release\armi\urel\NGTS.aif"         -"!:\system\apps\NGTS\NGTS.aif"

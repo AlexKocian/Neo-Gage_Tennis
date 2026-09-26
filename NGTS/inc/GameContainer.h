@@ -60,6 +60,9 @@ private:
 	CRenderer *iRenderer;
 	CScoreManager *iScoreManager;
 	CSettingsManager *iSettingsManager;
+
+public:
+	// Public so that the AppUi can interface with the sound manager
 	CSoundManager *iSoundManager;
 };
 

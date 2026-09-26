@@ -7,6 +7,9 @@
 #include <f32file.h>
 #include "SettingsManager.h"
 
+// CONSTANTS
+const TInt KDataChunkSize = 512; // In bytes
+
 // OBSERVER MIXIN DEFINITION
 class MSoundManagerObserver
 {
@@ -75,6 +78,7 @@ public:
 public:
 	void PlayWav( TWavFile aWavFileChosen );
 	void Stop();
+	void RestartL();
 	
 private:
 	CSoundManager( MSoundManagerObserver &aObserver, CSettingsManager &aSettingsManager );
@@ -88,9 +92,9 @@ private:
 	TMdaAudioDataSettings iStreamSettings;
 
 	// Silence for when no sound should play
-	TBuf8< 512 > iSilenceChunk;
+	TBuf8< KDataChunkSize > iSilenceChunk;
 	// Data chunk for mixing sound (KDataChunkSize) TODO constant as template?
-	TBuf8< 512 > iDataChunk;
+	TBuf8< KDataChunkSize > iDataChunk;
 
 	// Individual sound files
 	TFileName iPathBeep1;
@@ -99,6 +103,9 @@ private:
 	TFileName iPathMenuMove;
 
 	RPointerArray< CSoundFileWrapper > iSoundFileArray;
+
+public:
+	TBool iPlaying;
 };
 
 #endif

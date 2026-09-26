@@ -72,6 +72,7 @@ void CGameAppUi::HandleForegroundEventL( TBool aForeground )
 		if ( !iGamePaused )
 		{
 			iAppContainer->StartDSA();
+			iAppContainer->iSoundManager->RestartL();
 		}
 
 		SetKeyBlockMode( ENoKeyBlock );
@@ -79,6 +80,7 @@ void CGameAppUi::HandleForegroundEventL( TBool aForeground )
 	else
 	{
 		iAppContainer->StopDSA();
+		iAppContainer->iSoundManager->Stop();
 		SetKeyBlockMode( EDefaultBlockMode );
 	}
 }

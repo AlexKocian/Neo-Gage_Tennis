@@ -13,7 +13,6 @@ _LIT( KMenuBeepAcceptFile, "MenuBeepAccept.wav" );
 _LIT( KMenuBeepMoveFile, "MenuBeepMove.wav" );
 
 const TInt KVolumeDenominator = 4;
-const TInt KDataChunkSize = 512; // In bytes
 const TInt KSoundFileArrayGranularity = 8;
 
 // SOUND WRAPPER FUNCTIONS
@@ -108,7 +107,7 @@ void CSoundFileWrapper::StopPlayback()
 // MEMBER FUNCTIONS
 
 CSoundManager::CSoundManager( MSoundManagerObserver &aObserver, CSettingsManager &aSettingsManager ) :
-iObserver( aObserver ), iSoundFileArray( KSoundFileArrayGranularity ), iSettingsManager( aSettingsManager ) {}
+iObserver( aObserver ), iSoundFileArray( KSoundFileArrayGranularity ), iSettingsManager( aSettingsManager ), iPlaying( ETrue ) {}
 
 CSoundManager::~CSoundManager()
 {
@@ -174,6 +173,7 @@ void CSoundManager::ConstructL()
 	iSilenceChunk.FillZ( iSilenceChunk.MaxLength() );
 	iDataChunk.FillZ( iDataChunk.MaxLength() );
 
+	// Set up the stream
 	iStreamSettings.iSampleRate = TMdaAudioDataSettings::ESampleRate8000Hz;
 	iStreamSettings.iChannels = TMdaAudioDataSettings::EChannelsMono;
 	iStreamSettings.iFlags = TMdaAudioDataSettings::ENoNetworkRouting; // Only sent to speakers, not phone line
@@ -282,6 +282,11 @@ void CSoundManager::PlayWav( TWavFile aWavFileChosen )
 
 void CSoundManager::Stop()
 {
+	if ( !iPlaying )
+	{
+		return;
+	}
+
 	if ( iPlayerStream )
 	{
 		// Calls CSoundManager::MaoscBufferCopied with error code KErrAbort
@@ -290,4 +295,20 @@ void CSoundManager::Stop()
 
 	delete iPlayerStream;
 	iPlayerStream = NULL;
+
+	iPlaying = EFalse;
+}
+
+// Un-pauses playback. All sounds previously playing pick up where they stopped!
+void CSoundManager::RestartL()
+{
+	if ( iPlaying )
+	{
+		return;
+	}
+
+	iPlayerStream = CMdaAudioOutputStream::NewL( *this );
+	iPlayerStream->Open( &iStreamSettings );
+
+	iPlaying = ETrue;
 }

@@ -1,0 +1,4 @@
+MIT License
+Copyright (c) 2026 Alex Kocian
+
+You are installing a homebrew program at your own risk. If installing to your internal drive, make sure there is enough space (at least a few hundred kilobytes). Have fun!

@@ -25,7 +25,7 @@ const TInt KLogoPaddingVertical = 10;
 // CFrameCounter
 ////////////////
 
-CFrameCounter::CFrameCounter() : iCurrentFrameCount( 0 ), iLastFrameCount( 0 ), iOneSecond( 1000000 )
+CFrameCounter::CFrameCounter() : iOneSecond( 1000000 ), iLastFrameCount( 0 ), iCurrentFrameCount( 0 )
 {
 	iLastSecond = TTime();
 	iLastSecond.UniversalTime();
@@ -459,7 +459,7 @@ void CGameLoop::Start( TTimeIntervalMicroSeconds32 aInterval )
 }
 
 CGameLoop::CGameLoop( CEngine &aEngine, CDSAWrapper &aDSA, CRenderer &aRenderer, CSoundManager &aSoundManager ) :
-CTimer( EPriorityHigh ), iEngine( aEngine ), iDSA( aDSA ), iRenderer( aRenderer ), iPaused( EFalse ), iSoundManager( aSoundManager ), iSoundQueued( EFalse ) {}
+CTimer( EPriorityHigh ), iSoundQueued( EFalse ), iEngine( aEngine ), iDSA( aDSA ), iRenderer( aRenderer ), iSoundManager( aSoundManager ), iPaused( EFalse ) {}
 
 // From CActive. Updates the game engine and screen
 void CGameLoop::RunL()
@@ -623,8 +623,7 @@ CBackBuffer::~CBackBuffer()
 ////////////////
 
 CRenderer::CRenderer( CEngine &aEngine, TSize aSize, CScoreManager &aScoreManager, CSettingsManager &aSettingsManager ) :
-iScreenType( EScreenMainMenu ), iEngine( aEngine ), iScreenSize( aSize ), iHighlightedMenuItem( 0 ),
-iScoreManager( aScoreManager ), iSettingsManager( aSettingsManager ) {}
+iScreenType( EScreenMainMenu ), iEngine( aEngine ), iScoreManager( aScoreManager ), iSettingsManager( aSettingsManager ), iScreenSize( aSize ), iHighlightedMenuItem( 0 ) {}
 
 CRenderer *CRenderer::NewL( CEngine &aEngine, TSize aSize, CScoreManager &aScoreManager, CSettingsManager &aSettingsManager )
 {
@@ -787,7 +786,7 @@ void CRenderer::RenderMainMenu() const
 	BackBufferGc->SetPenStyle( CGraphicsContext::ESolidPen );
 	BackBufferGc->SetPenColor( KRgbWhite );
 
-	for ( i = 0; i < 2; ++i )
+	for ( TInt i = 0; i < 2; ++i )
 	{
 		TPoint TextPos = TPoint( iEngine.iScreenRect.Width() / 2 - ( MenuFont->TextWidthInPixels( MenuItems[ i ] ) / 2 ),
 								 ( iEngine.iScreenRect.Height() / 5 ) * ( i + 3 ) - MenuFont->HeightInPixels() );
@@ -860,7 +859,7 @@ void CRenderer::RenderPaused() const
 
 	TInt MenuHeightStep = ( MenuPos.iY + MenuSize.iHeight - MenuPos.iY ) / 5;
 
-	for ( i = 0; i < 2; ++i )
+	for ( TInt i = 0; i < 2; ++i )
 	{
 		TPoint TextPos = TPoint( iEngine.iScreenRect.Width() / 2 - ( MenuFont->TextWidthInPixels( MenuItems[ i ] ) / 2 ),
 								 ( MenuPos.iY ) + 2 * ( i + 1 ) * MenuHeightStep );
